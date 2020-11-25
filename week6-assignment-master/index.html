@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    	<meta charset="utf-8">
+    	<meta name="description" content="Your description goes here">
+    	<meta name="keywords" content="one, two, three">
+
+		<title>City Background</title>
+
+		<!-- external CSS link -->
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/style.css">
+
+	</head>
+	<body>
+		<header>
+			<div class="title">
+				<h1>CitiPix</h1>
+				<p>Your Cities, Your Pix</p>
+			</div>
+		</header>
+			<div class="container">
+				<form>
+					<select id="city-type">
+						<option>Select a City</option>
+						<option value="NYC">NYC</option>
+						<option value="LA">LA</option>
+						<option value="SYD">SYD</option>
+						<option value="ATX">ATX</option>
+						<option value="SF">SF</option>
+					</select>
+				</form>
+			</div>
+		<script>
+			// Set drop down menu variable.
+			var selectBar = document.querySelector('#city-type')
+			// Set body variable to change background image.
+			var cityBack = document.querySelector('body')
+			// Event listener, listening out for a 'change' on the drop down menu.
+			selectBar.addEventListener('change', function(event) {
+				event.preventDefault()
+				if (selectBar.value === "NYC") {
+					cityBack.style.backgroundImage = "url(images/nyc.jpg)"
+				} else if (selectBar.value === "LA") {
+					cityBack.style.backgroundImage = "url(images/la.jpg)"
+				} else if (selectBar.value === "SYD") {
+					cityBack.style.backgroundImage = "url(images/sydney.jpg)"
+				} else if (selectBar.value === "ATX") {
+					cityBack.style.backgroundImage = "url(images/austin.jpg)"
+				} else if (selectBar.value === "SF") {
+					cityBack.style.backgroundImage = "url(images/sf.jpg)"
+				} else {
+					cityBack.style.backgroundImage = "url(images/citipix_skyline.jpg)"
+				}
+				// Took Jared's wise advice and changed it to style.backgroundImage this time to prevent repeating images.
+			})
+		</script>
+	</body>
+</html>
